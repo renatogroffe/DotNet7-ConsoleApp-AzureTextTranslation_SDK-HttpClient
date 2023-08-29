@@ -23,9 +23,6 @@ do
     var targetLanguage = InputHelper.GetTargetLanguage();
     Console.WriteLine();
 
-    var requestBody = $$"""[ { "Text": "{{textToTranslate}}" } ]""";
-    Console.WriteLine($"Request Body: {requestBody}");
-
     var response = await client.TranslateAsync(
         targetLanguage, textToTranslate).ConfigureAwait(false);
     var translations = response.Value;
